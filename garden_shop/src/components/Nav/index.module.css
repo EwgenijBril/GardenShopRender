@@ -31,6 +31,15 @@
     cursor: pointer;
 }
 
+.header:hover button {
+    opacity: 1;
+}
+
+.header button:hover {
+    background-color: #241C15;
+    color: white;
+}
+
 .nav_menu {
     display: flex;
     justify-content: space-between;

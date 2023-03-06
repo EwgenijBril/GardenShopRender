@@ -59,6 +59,15 @@
     font-size: 28px;
 }
 
+.container_form:hover button {
+    opacity: 1;
+}
+
+.container_form button:hover {
+    background-color: white;
+    color: black;
+}
+
 .error_message {
     font-size: 20px;
     color: rgb(255, 247, 0);

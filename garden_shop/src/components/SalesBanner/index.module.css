@@ -29,15 +29,25 @@
 
 .left_block button {
     margin: 100px 25px 10px 0;
+    cursor: pointer;
+}
+
+.left_block:hover button {
+    opacity: 1;
+}
+
+.left_block button:hover {
+    background-color: white;
+    color: black;
 }
 
 .left_btn {
-    background-color: white;
-    border: 2px solid white;
+    background-color: #339933;
+    color: white;
+    border: 1px solid white;
     border-radius: 13px;
     width: 241px;
     height: 82px;
-    font-style: normal;
     font-weight: 700;
     font-size: 25px;  
 }
@@ -45,11 +55,10 @@
 .right_btn {
     background-color: #339933;
     color: white;
-    border: 2px solid white;
+    border: 1px solid white;
     border-radius: 13px;
     width: 241px;
     height: 82px;
-    font-style: normal;
     font-weight: 700;
     font-size: 25px;
 }

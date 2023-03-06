@@ -13,12 +13,14 @@ export default function Nav() {
           <Link to="/">
             <img src={logo} alt="logo" />
           </Link>
-          <button>Catalog</button>
+          <Link to="categories">
+            <button>Catalog</button>
+          </Link>
         </header>
 
         <div className={s.nav_menu}>
           <Link to="categories">Categories</Link>
-          <HashLink smooth to="#coupon">
+          <HashLink smooth to="/#coupon">
             Coupon
           </HashLink>
           <Link to="products">Sale</Link>

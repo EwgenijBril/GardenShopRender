@@ -1,16 +1,18 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
+import { clearCart } from "../../store/reducers/cart";
 import CartCard from "../../components/CartCard";
 import s from "./index.module.css";
 
 export default function CartPage() {
+  const dispatch = useDispatch();
+
   const cart = useSelector((state) => state.cart);
 
-  const total = cart.reduce(
-    (prev, { discont_price, count }) => prev + discont_price * count,
-    0
-  );
+  const total = cart
+    .reduce((prev, { discont_price, count }) => prev + discont_price * count, 0)
+    .toFixed(2);
 
   const {
     register,
@@ -22,7 +24,7 @@ export default function CartPage() {
   });
 
   const submit = (data) => {
-    console.log(data, total);
+    console.log(data);
     reset();
   };
 
@@ -33,6 +35,8 @@ export default function CartPage() {
       message: "* Not valid phone-forman",
     },
   });
+
+  const clear_cart = () => dispatch(clearCart());
 
   return (
     <div className={s.cart_page}>
@@ -62,7 +66,7 @@ export default function CartPage() {
               placeholder="+49"
               {...phoneRegister}
             />
-            <button>order</button>
+            <button onClick={clear_cart}>order</button>
             {errors.phone && <p>{errors.phone?.message}</p>}
           </div>
         </form>

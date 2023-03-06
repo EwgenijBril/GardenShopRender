@@ -47,13 +47,22 @@
 
 .right_block button {
     background-color: #339933;
-    border: 2px solid #339933;
+    border: 1px solid #339933;
     border-radius: 10px;
     width: 341px;
     height: 86px;
     font-weight: 700;
     font-size: 28px;
     color: white;
+}
+
+.right_block:hover button {
+    opacity: 1;
+}
+
+.right_block button:hover {
+    background-color: white;
+    color: black;
 }
 
 .description_block {
