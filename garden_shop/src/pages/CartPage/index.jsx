@@ -38,6 +38,12 @@ export default function CartPage() {
 
   const clear_cart = () => dispatch(clearCart());
 
+  const clear_form = (data) => {
+    submit(data);
+    if (!phoneRegister) return;
+    clear_cart();
+  };
+
   return (
     <div className={s.cart_page}>
       <div className={s.title_block}>
@@ -51,7 +57,7 @@ export default function CartPage() {
           ))}
         </div>
 
-        <form className={s.left_block} onSubmit={handleSubmit(submit)}>
+        <form className={s.left_block} onSubmit={handleSubmit(clear_form)}>
           <div className={s.titel}>
             <h3>Order details</h3>
             <div className={s.totals_count}>
@@ -66,7 +72,7 @@ export default function CartPage() {
               placeholder="+49"
               {...phoneRegister}
             />
-            <button onClick={clear_cart}>order</button>
+            <button>order</button>
             {errors.phone && <p>{errors.phone?.message}</p>}
           </div>
         </form>
